@@ -1,0 +1,4 @@
+MYBANK One-Time Password
+Transfer from account 1001 to 1002 of Rs. 56789
+OTP: 174094
+Time: 2026-08-10 22:11:49

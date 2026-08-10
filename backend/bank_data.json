@@ -1,0 +1,20 @@
+{
+  "accounts": [
+    {"accountNumber": "1001", "name": "Ali Khan", "cnic": "3520112345678", "phone": "03001234567", "type": "SAVINGS", "balance": 4482031.00, "status": "ACTIVE"},
+    {"accountNumber": "1002", "name": "Sara Ahmed", "cnic": "3520198765432", "phone": "03119876543", "type": "CURRENT", "balance": 120856.00, "status": "ACTIVE"}
+  ],
+  "transactions": [
+    {"id": "TXN0001", "accountNumber": "1001", "type": "DEPOSIT", "amount": 30000.00, "dateTime": "2026-08-09 14:37:11", "balanceAfter": 30000.00},
+    {"id": "TXN0002", "accountNumber": "1002", "type": "DEPOSIT", "amount": 5000.00, "dateTime": "2026-08-09 14:37:11", "balanceAfter": 5000.00},
+    {"id": "TXN0003", "accountNumber": "1001", "type": "DEPOSIT", "amount": 4567890.00, "dateTime": "2026-08-09 20:56:35", "balanceAfter": 4597890.00},
+    {"id": "TXN0004", "accountNumber": "1001", "type": "TRANSFER-OUT", "amount": 34567.00, "dateTime": "2026-08-09 20:57:13", "balanceAfter": 4563320.00},
+    {"id": "TXN0005", "accountNumber": "1002", "type": "TRANSFER-IN", "amount": 34567.00, "dateTime": "2026-08-09 20:57:13", "balanceAfter": 39567.00},
+    {"id": "TXN0006", "accountNumber": "1001", "type": "TRANSFER-OUT", "amount": 24500.00, "dateTime": "2026-08-10 22:11:36", "balanceAfter": 4538820.00},
+    {"id": "TXN0007", "accountNumber": "1002", "type": "TRANSFER-IN", "amount": 24500.00, "dateTime": "2026-08-10 22:11:36", "balanceAfter": 64067.00},
+    {"id": "TXN0008", "accountNumber": "1001", "type": "TRANSFER-OUT", "amount": 56789.00, "dateTime": "2026-08-10 22:12:16", "balanceAfter": 4482031.00},
+    {"id": "TXN0009", "accountNumber": "1002", "type": "TRANSFER-IN", "amount": 56789.00, "dateTime": "2026-08-10 22:12:16", "balanceAfter": 120856.00}
+  ],
+  "loans": [
+  ],
+  "cash": {"notes5000": 20, "notes1000": 4617, "notes500": 50, "notes100": 108, "total": 4752800}
+}
