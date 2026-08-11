@@ -580,7 +580,7 @@ void SetupInputs() {
         int formY = (h - formH) / 2;
         if (formY < 80) formY = 80;
         
-        g_activeInputs.push_back({ IN_ATM_ACC_NO, "Account Number", "1001", "", formX + 50, formY + 90, 240, 32, false, true, false, 10 });
+        g_activeInputs.push_back({ IN_ATM_ACC_NO, "Account Number", "10017", "", formX + 50, formY + 90, 240, 32, false, true, false, 10 });
         g_activeInputs.push_back({ IN_ATM_PIN, "Security PIN", "••••", "", formX + 50, formY + 160, 240, 32, false, true, true, 4 });
     }
     else if (g_currentScreen == SCR_ADMIN_LOGIN) {
@@ -608,7 +608,7 @@ void SetupInputs() {
             if (g_transferNeedOtp) {
                 g_activeInputs.push_back({ IN_ATM_TRANSFER_OTP, "Enter One-Time Password (OTP)", "Check otp.txt / console", "", cX, mainY + 140, 240, 32, false, true, false, 6 });
             } else {
-                g_activeInputs.push_back({ IN_ATM_TRANSFER_TO, "Target Account Number", "e.g. 1002", "", cX, mainY + 90, 240, 32, false, true, false, 10 });
+                g_activeInputs.push_back({ IN_ATM_TRANSFER_TO, "Target Account Number", "e.g. 10025", "", cX, mainY + 90, 240, 32, false, true, false, 10 });
                 g_activeInputs.push_back({ IN_ATM_TRANSFER_AMT, "Transfer Amount (Rs.)", "0.00", "", cX, mainY + 160, 240, 32, false, true, false, 10 });
             }
         }

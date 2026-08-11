@@ -75,7 +75,7 @@ function Login({ bank, notify, onLogin }) {
         <h2>ATM Login</h2>
         <p className="sub">Insert your card — enter your account number and 4-digit PIN.</p>
         <form onSubmit={submit}>
-          <Field label="Account Number" value={accNo} onChange={(e) => setAccNo(e.target.value)} placeholder="1001" inputMode="numeric" />
+          <Field label="Account Number" value={accNo} onChange={(e) => setAccNo(e.target.value)} placeholder="10017" inputMode="numeric" />
           <Field label="PIN" type="password" value={pin} onChange={(e) => setPin(e.target.value)} placeholder="••••" maxLength={4} inputMode="numeric" />
           <button className="btn primary" type="submit" disabled={busy}>{busy ? 'Checking…' : 'Authenticate →'}</button>
         </form>

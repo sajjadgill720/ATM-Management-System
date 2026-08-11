@@ -197,7 +197,7 @@ function Transactions({ bank }) {
       <h2>Transaction Ledger</h2>
       <p className="sub">Search and filter every transaction in the bank.</p>
       <div className="grid-2">
-        <Field label="Filter by account" value={accNo} onChange={(e) => setAccNo(e.target.value)} placeholder="e.g. 1001" />
+        <Field label="Filter by account" value={accNo} onChange={(e) => setAccNo(e.target.value)} placeholder="e.g. 10017" />
         <Select label="Filter by type" value={type} onChange={(e) => setType(e.target.value)}>
           <option value="">Any type</option>
           {['DEPOSIT', 'WITHDRAW', 'TRANSFER-IN', 'TRANSFER-OUT', 'PROFIT', 'LOAN', 'LOAN-REPAY'].map((t) => <option key={t} value={t}>{t}</option>)}
