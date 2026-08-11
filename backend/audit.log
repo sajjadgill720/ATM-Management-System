@@ -1,3 +1,21 @@
 [2026-08-09 14:37:11] Admin logged in
 [2026-08-09 14:37:11] Created account 1001 for Ali Khan
 [2026-08-09 14:37:11] Created account 1002 for Sara Ahmed
+[2026-08-11 00:46:48] Applied monthly savings profit to all savings accounts
+[2026-08-11 17:52:55] Issued loan LN0001 of 3456 to 1001
+[2026-08-11 22:34:52] Created account 1003 for saad
+[2026-08-11 22:35:14] Admin refilled ATM cash via web. New total Rs. 5025200
+[2026-08-11 22:38:58] Admin logged in
+[2026-08-11 22:40:55] Applied monthly savings profit to all savings accounts
+[2026-08-11 22:42:43] Admin logged in
+[2026-08-11 22:43:50] Created account 1004 for usman
+[2026-08-11 22:45:45] Edited account 1003
+[2026-08-11 22:46:01] Froze (closed) account 1003
+[2026-08-11 22:46:46] Deleted account 1003
+[2026-08-11 22:47:08] Admin refilled ATM cash. New total Rs. 5031800
+[2026-08-11 22:47:18] Admin refilled ATM cash. New total Rs. 5031800
+[2026-08-11 22:47:41] Applied monthly savings profit to all savings accounts
+[2026-08-11 22:47:53] Applied monthly savings profit to all savings accounts
+[2026-08-11 22:53:44] Account 1001 changed its PIN
+[2026-08-11 22:54:35] Loan LN0001 fully repaid by 1001
+[2026-08-11 22:55:09] Issued loan LN0002 of 45670 to 1001

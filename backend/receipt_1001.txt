@@ -1,0 +1,29 @@
+----------------------------------------
+  MYBANK ATM RECEIPT
+  Date   : 2026-08-11 22:52:02
+  Account: 1001 (Ali Khan)
+  Type   : DEPOSIT
+  Amount : Rs. 100.00
+  Balance: Rs. 4563380.99
+----------------------------------------
+
+----------------------------------------
+  MYBANK ATM RECEIPT
+  Date   : 2026-08-11 22:53:13
+  Account: 1001 (Ali Khan)
+  Type   : TRANSFER
+  Amount : Rs. 567.00
+  Detail : To account: 1002
+  Balance: Rs. 4562813.99
+----------------------------------------
+
+----------------------------------------
+  MYBANK ATM RECEIPT
+  Date   : 2026-08-11 22:59:53
+  Account: 1001 (Ali Khan)
+  Type   : TRANSFER
+  Amount : Rs. 26000.00
+  Detail : To account: 1002
+  Balance: Rs. 4578680.00
+----------------------------------------
+
