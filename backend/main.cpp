@@ -1,22 +1,4 @@
-// ===========================================================================
-//  MYBANK  --  Console Banking System (Bank Administration + ATM Customer)
-//
-//  Introductory C++ project. Demonstrates: variables & data types, conditions,
-//  loops, functions, vectors, classes/structs, strings, file handling, input
-//  validation, menu-driven design and basic OOP.
-//
-//  Build:   g++ -std=c++11 *.cpp -o bank
-//  Run:     ./bank      (Windows: bank.exe)
-//
-//  Data files created next to the program:
-//    accounts.txt        - one line per account (public data, no PINs)
-//    pins.txt            - secret PINs, kept in their own file
-//    transactions.txt    - full transaction history
-//    cash.txt            - ATM note inventory
-//    audit.log           - security / admin audit trail
-//    receipt_<acc>.txt   - printed receipts per account
-//    bank_data.json      - live export the React frontend reads
-// ===========================================================================
+
 
 #include "bank.h"
 #include "admin.h"

@@ -1,14 +1,4 @@
-// ===========================================================================
-//  MYBANK HTTP SERVER
-//
-//  Turns the C++ banking backend into a small REST API the React app calls for
-//  every read and write, so the web app and the files share one live state.
-//  Reuses the exact same Bank / Account / Transaction / Loan classes as the
-//  console program — this is genuinely "backend in C++".
-//
-//  Build:  see the Makefile  (make server)   — links -lws2_32 on Windows.
-//  Run:    ./server        -> listens on http://localhost:8080
-// ===========================================================================
+
 #include "bank.h"
 #include "utils.h"
 #include "httplib.h"

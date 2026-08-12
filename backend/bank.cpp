@@ -18,9 +18,7 @@ long long CashInventory::total() const {
 
 Bank::Bank() {}
 
-// ===========================================================================
-//  Loading
-// ===========================================================================
+
 void Bank::load() {
     loadAccounts();
     loadPins();          // attach hashed PINs from their separate file
@@ -130,9 +128,7 @@ void Bank::loadCash() {
     }
 }
 
-// ===========================================================================
-//  Saving
-// ===========================================================================
+
 void Bank::save() {
     saveAccounts();
     savePins();
@@ -168,9 +164,7 @@ void Bank::saveCash() {
         << cash_.notes500  << " " << cash_.notes100  << "\n";
 }
 
-// ===========================================================================
-//  Lookup
-// ===========================================================================
+
 Account* Bank::findByNumber(const string& accNo) {
     if (!luhn::isValid(accNo)) return nullptr;
     for (Account& a : accounts_) {
@@ -186,9 +180,7 @@ bool Bank::cnicExists(const string& cnic) const {
     return false;
 }
 
-// ===========================================================================
-//  Admin operations
-// ===========================================================================
+
 Account& Bank::createAccount(const string& name, const string& cnic,
                              const string& phone, const string& type,
                              const string& pin, double openingBalance) {
@@ -254,9 +246,7 @@ void Bank::applyMonthlyProfit() {
     audit("Applied monthly savings profit to all savings accounts");
 }
 
-// ===========================================================================
-//  Core banking operations (shared by the console ATM and the HTTP server)
-// ===========================================================================
+
 bool Bank::verifyPin(const string& accNo, const string& pin, string& message) {
     Account* a = findByNumber(accNo);
     if (!a) { message = "No account found with that number."; return false; }
@@ -346,9 +336,7 @@ bool Bank::changePin(const string& accNo, const string& oldPin,
     return true;
 }
 
-// ===========================================================================
-//  Transactions
-// ===========================================================================
+
 string Bank::makeTxnId() {
     stringstream ss;
     ss << "TXN" << setw(4) << setfill('0') << nextTxnSeq_++;
@@ -374,9 +362,7 @@ vector<Transaction> Bank::historyFor(const string& accNo) const {
     return result;
 }
 
-// ===========================================================================
-//  Loan management (bonus)
-// ===========================================================================
+
 string Bank::makeLoanId() {
     stringstream ss;
     ss << "LN" << setw(4) << setfill('0') << nextLoanSeq_++;
@@ -444,17 +430,13 @@ bool Bank::repayLoan(const string& accNo, double amount, string& message) {
     return true;
 }
 
-// ===========================================================================
-//  Audit log (bonus)
-// ===========================================================================
+
 void Bank::audit(const string& message) {
     ofstream out(AUDIT_FILE, ios::app);
     out << "[" << utils::currentDateTime() << "] " << message << "\n";
 }
 
-// ===========================================================================
-//  ATM cash dispensing (bonus)
-// ===========================================================================
+
 bool Bank::dispense(double amount, string& breakdown) {
     // Withdrawals must be whole rupees and a multiple of 100 (smallest note).
     long long amt = static_cast<long long>(amount);
@@ -497,10 +479,7 @@ bool Bank::dispense(double amount, string& breakdown) {
     return true;
 }
 
-// ===========================================================================
-//  JSON export for the React frontend
-//  We hand-write JSON (no library) to keep this a "basic C++" project.
-// ===========================================================================
+
 static string jsonEscape(const string& s) {
     string out;
     for (char c : s) {

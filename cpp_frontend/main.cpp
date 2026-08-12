@@ -1,14 +1,4 @@
-// ===========================================================================
-//  ASKARI BANK // DIGITAL DESKTOP PORTAL (C++ CLIENT)
-//
-//  A native Windows desktop app written in C++ that connects to the C++ HTTP API
-//  server. Implements custom double-buffered GDI rendering, non-blocking thread
-//  workers, responsive layout coordinates, and a premium clean light-themed UI
-//  designed for commercial banking operations.
-//
-//  Compile command:
-//    g++ -std=c++11 main.cpp -o cyber_atm -lgdi32 -lws2_32 -lmsimg32 -mwindows
-// ===========================================================================
+
 
 #include "../backend/httplib.h"
 #include <windows.h>
