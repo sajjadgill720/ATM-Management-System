@@ -1,5 +1,6 @@
 #include "bank.h"
 #include "utils.h"
+#include "luhn.h"
 
 #include <fstream>
 #include <sstream>
@@ -81,7 +82,8 @@ void Bank::loadAccounts() {
             // Track the highest numeric account number so new ones stay unique.
             try {
                 int n = stoi(acc.accountNumber);
-                if (n > maxSeq) maxSeq = n;
+                int baseVal = (n >= 10000) ? (n / 10) : n;
+                if (baseVal > maxSeq) maxSeq = baseVal;
             } catch (...) {}
         }
     }
@@ -170,6 +172,7 @@ void Bank::saveCash() {
 //  Lookup
 // ===========================================================================
 Account* Bank::findByNumber(const string& accNo) {
+    if (!luhn::isValid(accNo)) return nullptr;
     for (Account& a : accounts_) {
         if (a.accountNumber == accNo) return &a;
     }
@@ -190,7 +193,7 @@ Account& Bank::createAccount(const string& name, const string& cnic,
                              const string& phone, const string& type,
                              const string& pin, double openingBalance) {
     Account acc;
-    acc.accountNumber = to_string(nextAccountSeq_++);
+    acc.accountNumber = luhn::generateNext(nextAccountSeq_++);
     acc.name          = name;
     acc.cnic          = cnic;
     acc.phone         = phone;
