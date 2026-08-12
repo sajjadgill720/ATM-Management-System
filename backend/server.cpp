@@ -246,6 +246,25 @@ int main() {
                                "\"accountNumber\":\"" + a.accountNumber + "\""), "application/json");
     });
 
+    // Edit the same customer details exposed by the console admin module.
+    // Blank name/phone values mean "keep existing", matching admin.cpp.
+    svr.Post("/api/admin/edit", [&](const httplib::Request& req, httplib::Response& res) {
+        lock_guard<mutex> lk(mtx);
+        string accNo = jsonStr(req.body, "accountNumber");
+        Account* a = bank.findByNumber(accNo);
+        if (!a) { res.set_content(result(false, "Account not found."), "application/json"); return; }
+
+        string name = jsonStr(req.body, "name");
+        string phone = jsonStr(req.body, "phone");
+        string type = jsonStr(req.body, "type");
+        if (!name.empty()) a->name = name;
+        if (!phone.empty()) a->phone = phone;
+        if (type == "SAVINGS" || type == "CURRENT") a->type = type;
+        bank.audit("Edited account " + accNo + " via desktop client");
+        bank.save();
+        res.set_content(result(true, "Account details updated."), "application/json");
+    });
+
     svr.Post("/api/admin/status", [&](const httplib::Request& req, httplib::Response& res) {
         lock_guard<mutex> lk(mtx);
         string acc = jsonStr(req.body, "accountNumber");
